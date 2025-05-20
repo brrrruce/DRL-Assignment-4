@@ -50,6 +50,8 @@ class Agent(object):
             self._initialized = False
 
     def act(self, observation):
+        action = self.action_space.sample()
+        return action.astype(np.float64)
         if not isinstance(observation, np.ndarray):
             observation = np.asarray(observation, dtype=np.float32)
 
